@@ -1,4 +1,5 @@
-package org.example;
+//Убрал служебные классы из test
+package other;
 
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;

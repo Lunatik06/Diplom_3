@@ -1,4 +1,6 @@
-package Other;
+//Убрал служебные классы из test
+//исправил название пакета
+package other;
 
 import com.github.javafaker.Faker;
 

@@ -1,8 +1,9 @@
-package org.example.user;
+//Убрал служебные классы из test
+package other.user;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-import org.example.StellarBurgerSpec;
+import other.StellarBurgerSpec;
 
 import java.net.HttpURLConnection;
 import java.util.Map;

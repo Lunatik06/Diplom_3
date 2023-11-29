@@ -1,4 +1,6 @@
-package Other;
+//Убрал служебные классы из test
+//исправил название пакета
+package other;
 
 import org.junit.rules.ExternalResource;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +12,6 @@ import java.io.File;
 import java.time.Duration;
 
 public class DriverRule extends ExternalResource {
-
     WebDriver driver;
 
     @Override
@@ -30,8 +31,9 @@ public class DriverRule extends ExternalResource {
                 .usingDriverExecutable(new File("src/main/driver/chromedriver"))
                 .build();
 
-        var options = new ChromeOptions()
-                .setBinary("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome");
+        var options = new ChromeOptions();
+
+        // По совету наставника просто убрал путь до бинарника. Для запуска тестов достаточно драйвера.
 
         driver = new ChromeDriver(service, options);
     }
@@ -42,8 +44,8 @@ public class DriverRule extends ExternalResource {
                 .usingDriverExecutable(new File("src/main/driver/yandexdriver"))
                 .build();
 
-        var options = new ChromeOptions()
-                .setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
+        var options = new ChromeOptions();
+        // По совету наставника просто убрал путь до бинарника. Для запуска тестов достаточно драйвера.
 
         driver = new ChromeDriver(service, options);
     }

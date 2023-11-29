@@ -1,14 +1,22 @@
 package praktikum;
 
-import Other.DriverRule;
+import other.DriverRule;
 import io.qameta.allure.Epic;
 import io.qameta.allure.junit4.DisplayName;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import pages.MainPage;
+import pageobjects.MainPage;
 
 @Epic("Конструктор")
 public class ConstructionTest {
+    MainPage mainPage;
+
+    @Before
+    // вынес типовые действия для всех сценариев в before и after
+    public void baseTest() {
+        mainPage = new MainPage(driverRule.getDriver());
+    }
 
     @Rule
     public DriverRule driverRule = new DriverRule();
@@ -16,8 +24,6 @@ public class ConstructionTest {
     @Test
     @DisplayName("Конструктор, переход к разделу \"Соусы\"")
     public void clickSaucesTest() {
-        MainPage mainPage = new MainPage(driverRule.getDriver());
-
         mainPage.open()
                 .clickInactiveSectionSauces()
                 .checkActiveSectionSauces();
@@ -26,8 +32,6 @@ public class ConstructionTest {
     @Test
     @DisplayName("Конструктор, переход к разделу \"Булки\"")
     public void clickBreadsTest() {
-        MainPage mainPage = new MainPage(driverRule.getDriver());
-
         mainPage.open()
                 .clickInactiveSectionSauces()
                 .clickInactiveSectionBreads()
@@ -37,11 +41,8 @@ public class ConstructionTest {
     @Test
     @DisplayName("Конструктор, переход к разделу \"Начинки\"")
     public void clickEntrailsTest() {
-        MainPage mainPage = new MainPage(driverRule.getDriver());
-
-        mainPage.open()
+           mainPage.open()
                 .clickInactiveSectionEntrails()
                 .checkActiveSectionEntrails();
     }
-
 }

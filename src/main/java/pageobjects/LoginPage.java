@@ -1,11 +1,11 @@
-package pages;
+// Перенес Page Objects в src.main.java.pageobjects
+package pageobjects;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
-
     //Инпут "Email"
     private static final By loginEmail = By.xpath(".//label[.='Email']/../input");
     //Инпут "Пароль"

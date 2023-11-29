@@ -1,11 +1,11 @@
-package pages;
+// Перенес Page Objects в src.main.java.pageobjects
+package pageobjects;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterPage {
-
     //Инпут "Имя"
     private static final By registerName = By.xpath(".//label[.='Имя']/../input");
     //Инпут "Email"
@@ -59,7 +59,6 @@ public class RegisterPage {
     public void clickLinkLogin() {
         driver.findElement(linkLogin).click();
     }
-
 }
 
 

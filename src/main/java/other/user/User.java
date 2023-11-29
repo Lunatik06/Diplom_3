@@ -1,4 +1,5 @@
-package org.example.user;
+//Убрал служебные классы из test
+package other.user;
 
 public class User {
 

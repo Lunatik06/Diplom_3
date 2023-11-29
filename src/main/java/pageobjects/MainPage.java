@@ -1,12 +1,12 @@
-package pages;
+// Перенес Page Objects в src.main.java.pageobjects
+package pageobjects;
 
-import Other.EnvConfig;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import other.EnvConfig;
 
 public class MainPage {
-
     // Кнопка "Личный кабинет"
     private static final By personalArea = By.xpath(".//p[(text()='Личный Кабинет')]");
     // Ссылка "Зарегистрироваться"
@@ -90,8 +90,6 @@ public class MainPage {
         driver.findElement(activeSectionEntrails);
         return this;
     }
-
-
 }
 
 
